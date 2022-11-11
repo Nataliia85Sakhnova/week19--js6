@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <h1 style="color: brown;">Регистрация для любителей котиков</h1>
+
+        <form name="form">
+
+            <div>
+                <label for="ownername">Имя владельца:</label>
+                <input type="text" id="ownername" required />
+            </div>
+
+            <div>
+                <label for="petsname">Имя котика:</label>
+                <input type="text" id="petsname" required />
+            </div>
+
+            <div>
+                <label>Мальчик или девочка:</label>
+                <br />Самец<input type="radio" name="sex" checked />
+                <br />Самка<input type="radio" name="sex" />
+            </div>
+
+            <div>
+                <label for="breed">Порода:</label>
+                <input type="text" id="breed" required />
+            </div>
+
+            <div>
+                <label for="food">Чем питается:</label>
+                <input type="text" id="food" required />
+            </div>
+
+        </form>
+    </div>
+
+    <button id="button">Создать кота</button>
+
+    <p id="plasefornewcat"></p>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
