@@ -5,8 +5,8 @@
 
 class Worker {
 
-    constructor(name1, surname, rate, days) {
-        this.name1 = name1;
+    constructor(name, surname, rate, days) {
+        this.name = name;
         this.surname = surname;
         this.rate = rate;
         this.days = days;
@@ -17,26 +17,16 @@ class Worker {
     }
 }
 
-const worker = new Worker("Jukka", "Pekka", 150, 20);
+// создаем переменные, вкладываем в них значение инпутов:
+const namefromvalue = document.getElementById("name").value;
+const surnamefromvalue = document.getElementById("surname").value;
+const ratefromvalue = document.getElementById("rate").value;
+const daysfromvalue = document.getElementById("days").value;
 
-console.log(worker.name1);
-console.log(worker.surname);
-console.log(worker.rate);
-console.log(worker.days);
-console.log(worker.getSalary());
+const worker = new Worker(namefromvalue, surnamefromvalue, ratefromvalue, daysfromvalue); //в какой момент оно должно запуститься
 
-document.createElement("p").textContent = new Worker;
+console.log(worker);
 
-
-
-
-
-// const person {
-//     name = Valera,
-//         age = 23
-// }
-
-// let city = person.city
-// city = "Amsterdam"
-
-// console.log(person);
+document.getElementById("button").addEventListener("click", () => {
+    document.getElementById("salary").textContent = new Worker;
+})
