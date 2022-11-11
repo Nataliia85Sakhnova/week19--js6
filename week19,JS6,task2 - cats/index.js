@@ -7,31 +7,33 @@
 
 
 class Cat {
-    constructor(ownername, catname, breed, food, sex) {
+    constructor(ownername, catname, breed, food) {
         this.ownername = ownername;
         this.catname = catname;
-        this.sex = sex;
+        // this.sex = sex;
         this.breed = breed;
         this.food = food;
     }
 }
 
 
-// создаем кнопку, и в нее вкладыаем вот это вот все:
+// создаем кнопку:
 document.getElementById("button").addEventListener("click", () => {
 
     // создаем переменные, вкладываем в них значение инпутов:
     const ownername = document.getElementById("ownername").value;
     const petsname = document.getElementById("petsname").value;
-    const sex = document.getElementById("sex").value; //как сделать с радиокнопкой?
+    // const sex = document.getElementById("sex").value; //как сделать с радиокнопкой?
     const breed = document.getElementById("breed").value;
     const food = document.getElementById("food").value;
 
     // создаем нового кота:
-    const specificcat = new Cat(ownername, petsname, sex, breed, food);
+    const specificcat = new Cat(ownername, petsname, breed, food);
+    console.log(specificcat);
 
-    document.getElementById("plasefornewcat").innerHTML(specificcat);
+    // document.getElementById("plasefornewcat").innerHTML(specificcat); - думаю что надо так, но не работает
+
+    const cat_container = document.createElement("p"); //тоже не работает, но хоть не ругается
+    cat_container.textContent = specificcat;
 
 })
-
-// console.log(specificcat);
