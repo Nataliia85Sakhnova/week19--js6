@@ -20,13 +20,14 @@ class Worker {
 // создаем переменные, вкладываем в них значение инпутов:
 const namefromvalue = document.getElementById("name").value;
 const surnamefromvalue = document.getElementById("surname").value;
-const ratefromvalue = document.getElementById("rate").value;
-const daysfromvalue = document.getElementById("days").value;
+const ratefromvalue = document.getElementById("rate").value; //добавить проверку на то, что здесь только цифры
+const daysfromvalue = document.getElementById("days").value; //добавить проверку на то, что здесь только цифры
 
 const worker = new Worker(namefromvalue, surnamefromvalue, ratefromvalue, daysfromvalue); //в какой момент оно должно запуститься
 
 console.log(worker);
 
 document.getElementById("button").addEventListener("click", () => {
-    document.getElementById("salary").textContent = new Worker;
+    document.getElementById("salary").textContent = new Worker + "евро";
+
 })
