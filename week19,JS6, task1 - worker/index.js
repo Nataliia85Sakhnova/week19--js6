@@ -17,11 +17,22 @@ class Worker {
     }
 }
 
+//функция проверки инпута на пустоту:
+const isEmpty = (input) => {
+    // if value of input == 0
+    // тогда:
+    // прервать подсчеты и 
+    // document.getElementById("alarm").textContent = "Пожалуйста, заполните все поля!";
+
+}
+
 // создаем переменные, вкладываем в них значение инпутов:
 const namefromvalue = document.getElementById("name").value;
 const surnamefromvalue = document.getElementById("surname").value;
-const ratefromvalue = document.getElementById("rate").value; //добавить проверку на то, что здесь только цифры
-const daysfromvalue = document.getElementById("days").value; //добавить проверку на то, что здесь только цифры
+const ratefromvalue = document.getElementById("rate").value;
+const daysfromvalue = document.getElementById("days").value;
+
+
 
 const worker = new Worker(namefromvalue, surnamefromvalue, ratefromvalue, daysfromvalue); //в какой момент оно должно запуститься
 
