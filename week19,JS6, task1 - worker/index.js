@@ -22,7 +22,6 @@ document.getElementById("button").addEventListener("click", () => {
 
     //проверка инпута на пустоту:
     const isEmpty = (input) => {
-        console.log(input);
         if (input == '') {
             document.getElementById("alarm").textContent = "Пожалуйста, заполните все поля!";
 
@@ -43,6 +42,9 @@ document.getElementById("button").addEventListener("click", () => {
     const worker = new Worker(namefromvalue, surnamefromvalue, ratefromvalue, daysfromvalue);
     console.log(worker);
 
-    document.getElementById("salary").textContent = String(ratefromvalue * daysfromvalue) + " евро";
-
+    if (ratefromvalue * daysfromvalue == '' | 0) {
+        document.getElementById("salary").textContent = '';
+    } else {
+        document.getElementById("salary").textContent = String(ratefromvalue * daysfromvalue) + " евро";
+    }
 })
