@@ -46,5 +46,6 @@ document.getElementById("button").addEventListener("click", () => {
         document.getElementById("salary").textContent = '';
     } else {
         document.getElementById("salary").textContent = String(ratefromvalue * daysfromvalue) + " евро";
+        document.getElementById("alarm").textContent = '';
     }
 })
