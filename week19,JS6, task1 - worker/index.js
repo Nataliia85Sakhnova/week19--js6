@@ -22,11 +22,12 @@ document.getElementById("button").addEventListener("click", () => {
 
     //проверка инпута на пустоту:
     const isEmpty = (input) => {
-        // if value of input == 0;
-        // document.getElementById("alarm").textContent = "Пожалуйста, заполните все поля!";
+        console.log(input);
+        if (input == '') {
+            document.getElementById("alarm").textContent = "Пожалуйста, заполните все поля!";
 
+        }
     }
-
 
     // создаем переменные, вкладываем в них значение инпутов:
     const namefromvalue = document.getElementById("name").value;
@@ -34,11 +35,14 @@ document.getElementById("button").addEventListener("click", () => {
     const ratefromvalue = document.getElementById("rate").value;
     const daysfromvalue = document.getElementById("days").value;
 
-    const worker = new Worker(namefromvalue, surnamefromvalue, ratefromvalue, daysfromvalue); //в какой момент оно должно запуститься
+    isEmpty(namefromvalue);
+    isEmpty(surnamefromvalue);
+    isEmpty(ratefromvalue);
+    isEmpty(daysfromvalue);
 
+    const worker = new Worker(namefromvalue, surnamefromvalue, ratefromvalue, daysfromvalue);
     console.log(worker);
 
     document.getElementById("salary").textContent = String(ratefromvalue * daysfromvalue) + " евро";
-
 
 })
