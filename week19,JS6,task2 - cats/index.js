@@ -20,15 +20,6 @@ document.getElementById("button").addEventListener("click", () => {
     const petsname = document.getElementById("petsname").value;
     const breed = document.getElementById("breed").value;
     const food = document.getElementById("food").value;
-
-    // вариации на тему секса:
-
-    // if (document.getElementById("boy") == checked) {
-    //     const sex = "boy";
-    // } else {
-    //     const sex = "girl";
-    // }
-
     const sex = document.querySelectorAll('input[name="sex"]')
     let gender = "female"; //это Миша подсказал, я не до конца понимаю как оно работает
     for (const s of sex) {
@@ -37,20 +28,15 @@ document.getElementById("button").addEventListener("click", () => {
         }
     }
 
-    console.log("CGENDER IS", gender)
-
-
-    // const selected = document.querySelector('input[name="sex"]:checked').value;
-    // console.log(selected);
-
-
-
     // создаем нового кота:
     const specificcat = new Cat(ownername, petsname, breed, food, gender);
     console.log(specificcat);
+    const stringCat = JSON.stringify(specificcat);
 
     // document.getElementById("plasefornewcat").innerHTML(specificcat);
-    // document.getElementById("plasefornewcat").textContent = specificcat;
+    document.getElementById("plasefornewcat").textContent = stringCat;
     // document.createElement("p").innerHTML(specificcat);
+
+
 
 })
