@@ -3,22 +3,21 @@
 // Также класс должен иметь метод getSalary(), который будет выводить зарплату работника.
 // Зарплата - это произведение(умножение) ставки rate на количество отработанных дней days.
 
+class Worker {
+
+    constructor(name, surname, rate, days) {
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
+    }
+
+    static getSalary(rate, days) {
+        return rate * days;
+    }
+}
 
 document.getElementById("button").addEventListener("click", () => {
-
-    class Worker {
-
-        constructor(name, surname, rate, days) {
-            this.name = name;
-            this.surname = surname;
-            this.rate = rate;
-            this.days = days;
-        }
-
-        static getSalary(rate, days) {
-            return rate * days;
-        }
-    }
 
     //проверка инпута на пустоту:
     const isEmpty = (input) => {
