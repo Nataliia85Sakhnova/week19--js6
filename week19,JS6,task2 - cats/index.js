@@ -18,18 +18,35 @@ document.getElementById("button").addEventListener("click", () => {
     // создаем переменные, вкладываем в них значение инпутов:
     const ownername = document.getElementById("ownername").value;
     const petsname = document.getElementById("petsname").value;
+    const breed = document.getElementById("breed").value;
+    const food = document.getElementById("food").value;
+
+    // вариации на тему секса:
+
     // if (document.getElementById("boy") == checked) {
     //     const sex = "boy";
     // } else {
     //     const sex = "girl";
     // }
-    const selected = document.querySelector('input[name="sex"]:checked').value;
-    console.log(selected);
-    const breed = document.getElementById("breed").value;
-    const food = document.getElementById("food").value;
+
+    const sex = document.querySelectorAll('input[name="sex"]')
+    for (const s of sex) {
+        if (s.checked) {
+            console.log(s.id); //работает, ёба!!!
+            return s.id;
+        }
+    }
+
+    const gender = s.id; //?????????????
+
+
+    // const selected = document.querySelector('input[name="sex"]:checked').value;
+    // console.log(selected);
+
+
 
     // создаем нового кота:
-    const specificcat = new Cat(ownername, petsname, breed, food);
+    const specificcat = new Cat(ownername, petsname, breed, food, gender);
     console.log(specificcat);
 
     // document.getElementById("plasefornewcat").innerHTML(specificcat);
