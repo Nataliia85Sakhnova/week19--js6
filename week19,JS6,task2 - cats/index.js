@@ -3,10 +3,10 @@
 // В этом классе будут только свойства и конструктор, без методов. 
 // Выведите результат (заполненный объект класса Cat) в консоль при помощи console.log.
 class Cat {
-    constructor(ownername, catname, breed, food) {
+    constructor(ownername, catname, breed, food, gender) {
         this.ownername = ownername;
         this.catname = catname;
-        // this.sex = sex;
+        this.gender = gender;
         this.breed = breed;
         this.food = food;
     }
@@ -30,14 +30,14 @@ document.getElementById("button").addEventListener("click", () => {
     // }
 
     const sex = document.querySelectorAll('input[name="sex"]')
+    let gender = "female"; //это Миша подсказал, я не до конца понимаю как оно работает
     for (const s of sex) {
         if (s.checked) {
-            console.log(s.id); //работает, ёба!!!
-            return s.id;
+            gender = s.id
         }
     }
 
-    const gender = s.id; //?????????????
+    console.log("CGENDER IS", gender)
 
 
     // const selected = document.querySelector('input[name="sex"]:checked').value;
