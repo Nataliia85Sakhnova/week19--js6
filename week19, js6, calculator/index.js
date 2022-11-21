@@ -13,19 +13,19 @@ class Calculator {
     static plus(inputs) {
         let x = document.getElementById("number1").value;
         let y = document.getElementById("number2").value;
-        showResult(Number(x) + Number(y))
+        return (Number(x) + Number(y))
     }
 
     static minus(inputs) {
         let x = document.getElementById("number1").value;
         let y = document.getElementById("number2").value;
-        showResult(Number(x) - Number(y))
+        return (Number(x) - Number(y))
     }
 
     static multi(inputs) {
         let x = document.getElementById("number1").value;
         let y = document.getElementById("number2").value;
-        showResult(Number(x) * Number(y))
+        return (Number(x) * Number(y))
     }
 
     static divide(inputs) {
@@ -39,24 +39,42 @@ class Calculator {
             return
         }
 
-        showResult(Number(x) / Number(y))
+        return (Number(x) / Number(y))
     }
 
-    static showResult = (answer) => {
+    static showResult(answer) {
         const string = JSON.stringify(answer);
         console.log(string);
         paragraf.innerHTML = string; //вписывает в абзац
     }
 
-    static Calculation = (button, method) => {
-        button.addEventListener("click", method);
+    // static writing(button, method) {
+    //     button.addEventListener("click", method);
 
-    }
-
-
+    // }
 }
 
-Calculation(buttonPlus, Calculator.plus);
-Calculation(buttonMinus, Calculator.minus);
-Calculation(buttonMulti, Calculator.multi);
-Calculation(buttonDivide, Calculator.divide);
+buttonPlus.addEventListener("click", () => { //вынесенно в функцию для отсрачки события
+    Calculator.showResult(Calculator.plus())
+})
+
+buttonMinus.addEventListener("click", () => {
+    Calculator.showResult(Calculator.minus())
+})
+
+buttonMulti.addEventListener("click", () => {
+    Calculator.showResult(Calculator.multi())
+})
+
+buttonDivide.addEventListener("click", () => {
+    Calculator.showResult(Calculator.divide())
+})
+
+// Calculator.writing(buttonPlus, Calculator.showResult(Calculator.plus()))
+
+// document.addEventListener(buttonPlus, Calculator.plus());
+
+// Calculation(buttonPlus, Calculator.plus);
+// Calculation(buttonMinus, Calculator.minus);
+// Calculation(buttonMulti, Calculator.multi);
+// Calculation(buttonDivide, Calculator.divide);

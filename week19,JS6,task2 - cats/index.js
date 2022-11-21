@@ -21,7 +21,7 @@ document.getElementById("button").addEventListener("click", () => {
     const breed = document.getElementById("breed").value;
     const food = document.getElementById("food").value;
     const sex = document.querySelectorAll('input[name="sex"]')
-    let gender = "female"; //это Миша подсказал, я не до конца понимаю как оно работает
+    let gender = "female";
     for (const s of sex) {
         if (s.checked) {
             gender = s.id
