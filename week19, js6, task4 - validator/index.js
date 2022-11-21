@@ -11,11 +11,15 @@
 class Validator {
     isEmail() {
         принял строку
+        const regexpEmail = ...;
         if {
-            проверил через RegExp, если валидна, то тру
+            matchEmail == str.match(regexpEmail)
+            если валидна, то тру и едем дальше
+        } else {
+            document.getElementById("alarm").textContent = "Проверь написание Email";;
         }
     }
-    document.getElementById("alarm").textContent = "Проверь написание Email";;
+
     isDomain() {};
     isDate() {};
     isPhone() {};
@@ -28,6 +32,8 @@ class Validator {
     static isPhone() {};
 }
 
+
+вызов по кнопке как в предыдущем задании
 //стандартная вызывается вот так
 var validator = new Validator();
 console.log(validator.isEmail('alisa@mail.ru'));
