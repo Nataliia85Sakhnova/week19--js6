@@ -10,11 +10,10 @@
 
 class Validator {
     isEmail() {
-        принял строку
-        const regexpEmail = ...;
+        const email = document.getElementById("Email").value;
+        const regexpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
         if {
-            matchEmail == str.match(regexpEmail)
-            если валидна, то тру и едем дальше
+            email == str.match(regexpEmail);
         } else {
             document.getElementById("alarm").textContent = "Проверь написание Email";;
         }
@@ -41,6 +40,7 @@ console.log(validator.isDomain('itgirlschool.ru'));
 console.log(validator.isDate('12.05.2021'));
 console.log(validator.isPhone('+7(910)123-45-67')); //тут используем формат своей страны
 
+вызов по кнопке как в предыдущем задании
 //а статическая так
 console.log(ValidatorStatic.isEmail('alisa@mail.ru'));
 console.log(ValidatorStatic.isDomain('itgirlschool.ru'));
