@@ -9,24 +9,45 @@
 // Сделайте 2 версии этого класса - стандартную и статическую.
 
 //словарик:
-const email = document.getElementById("Email").value;
-const regexpEmail = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
 const buttonNormal = document.getElementById("buttonNormal");
 const buttonStatic = document.getElementById("buttonStatic");
-class Validator {
-    isEmail() {
+
+let Validator = {
+    email: document.getElementById("Email").value,
+    domain: document.getElementById("Domain").value,
+    dateOf: document.getElementById("Date").value,
+    phone: document.getElementById("Phone").value,
+    regexpEmail: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
+    regexpDomain: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
+    regexpDate: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
+    regexpPhone: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
+
+    isEmail: () => {
         if (email.match(regexpEmail)) {
             document.getElementById("name").textContent = email; //???
         } else {
             document.getElementById("alarm").textContent = "Проверь написание Email";
         };
-    }
 
-    isDomain() {};
-    isDate() {};
-    isPhone() {};
-}
+
+        isDomain: () => {}
+        isDate: () => {}
+        isPhone: () => {}
+    };
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 class ValidatorStatic {
 
