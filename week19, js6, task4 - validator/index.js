@@ -29,6 +29,11 @@ class Validator {
 }
 
 class ValidatorStatic {
+
+    // static compare(articleA, articleB) {
+    //     return articleA.date - articleB.date;
+    //   }
+
     static isEmail() {};
     static isDomain() {};
     static isDate() {};
