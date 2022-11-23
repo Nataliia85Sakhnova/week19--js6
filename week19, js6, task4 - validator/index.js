@@ -1,10 +1,10 @@
 // Реализуйте класс `Валидатор`, который будет проверять строки.
 // К примеру, у него будет метод `isEmail`, который параметром принимает строку и проверяет,
 // является ли она корректным емейлом или нет.Если является - возвращает true, если не является - то false.
-// Кроме того, класс будет иметь следующие методы: метод `isDomain`
-// для проверки домена, метод `isDate`
-// для проверки даты и метод `isPhone`
-// для проверки телефона.
+// Кроме того, класс будет иметь следующие методы:
+// метод `isDomain` для проверки домена,
+// метод `isDate` для проверки даты
+// метод `isPhone` для проверки телефона.
 
 // Сделайте 2 версии этого класса - стандартную и статическую.
 
@@ -16,11 +16,10 @@ const buttonNormal = document.getElementById("buttonNormal");
 const buttonStatic = document.getElementById("buttonStatic");
 class Validator {
     isEmail() {
-        if {
-            email == str.match(regexpEmail);
-            // и он еще должен как то запомнить тут
+        if (email.match(regexpEmail)) {
+            document.getElementById("name").textContent = email; //???
         } else {
-            document.getElementById("alarm").textContent = "Проверь написание Email";;
+            document.getElementById("alarm").textContent = "Проверь написание Email";
         };
     }
 
@@ -29,7 +28,7 @@ class Validator {
     isPhone() {};
 }
 
-class Validator {
+class ValidatorStatic {
     static isEmail() {};
     static isDomain() {};
     static isDate() {};
@@ -39,10 +38,10 @@ class Validator {
 buttonNormal.addEventListener("click", () => { //вынесенно в функцию для отсрачки события
     //стандартная вызывается вот так
     var validator = new Validator();
-    console.log(validator.isEmail('alisa@mail.ru'));
-    console.log(validator.isDomain('itgirlschool.ru'));
-    console.log(validator.isDate('12.05.2021'));
-    console.log(validator.isPhone('+7(910)123-45-67')); //тут используем формат своей страны
+    console.log(validator.isEmail(email));
+    // console.log(validator.isDomain(domen));
+    // console.log(validator.isDate(date));
+    // console.log(validator.isPhone(phone));
 })
 
 buttonStatic.addEventListener("click", () => { //вынесенно в функцию для отсрачки события
