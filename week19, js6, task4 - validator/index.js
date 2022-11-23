@@ -18,6 +18,7 @@ class Validator {
     isEmail() {
         if {
             email == str.match(regexpEmail);
+            // и он еще должен как то запомнить тут
         } else {
             document.getElementById("alarm").textContent = "Проверь написание Email";;
         };
