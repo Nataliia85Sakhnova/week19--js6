@@ -8,46 +8,50 @@
 
 // Сделайте 2 версии этого класса - стандартную и статическую.
 
-//словарик:
+// Функция == метод
+// Объект == экземпляр
+// Свойство == поле
 
+//словарик:
 const buttonNormal = document.getElementById("buttonNormal");
 const buttonStatic = document.getElementById("buttonStatic");
 
-let Validator = {
-    email: document.getElementById("Email").value,
-    domain: document.getElementById("Domain").value,
-    dateOf: document.getElementById("Date").value,
-    phone: document.getElementById("Phone").value,
-    regexpEmail: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
-    regexpDomain: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
-    regexpDate: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
-    regexpPhone: /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
+class Validator {
 
-    isEmail: () => {
-        if (email.match(regexpEmail)) {
-            document.getElementById("name").textContent = email; //???
+    constructor(email, domain, dateof, phone) {
+        this.email = email;
+        this.domain = domain;
+        this.dateof = dateof;
+        this.phone = phone;
+        this._regexpEmail = /@/;
+        this._regexpDomain = /^(?!-)[A-Za-z0-9-]+([\-\.]{1}[a-z0-9]+)*\.[A-Za-z]{2,6}$/;
+    }
+
+    // 
+
+    isEmail() {
+        console.log(this.email.match(this._regexpEmail));
+        if (this.email.match(this._regexpEmail)) {
+            document.getElementById("email").textContent = this.email; //???
         } else {
             document.getElementById("alarm").textContent = "Проверь написание Email";
-        };
+        }
+    }
 
-
-        isDomain: () => {}
-        isDate: () => {}
-        isPhone: () => {}
-    };
-};
-
-
-
-
-
-
-
+    isDomain() {
+        console.log(this.domain.match(this._regexpDomain));
+        if (this.email.match(this._regexpEmail)) {
+            document.getElementById("email").textContent = this.domain; //???
+        } else {
+            document.getElementById("alarm").textContent = "Проверь написание Domain";
+        }
+    }
+}
 
 
 
-
-
+//     isDate() {}
+//     isPhone() {}
 
 class ValidatorStatic {
 
@@ -63,8 +67,15 @@ class ValidatorStatic {
 
 buttonNormal.addEventListener("click", () => { //вынесенно в функцию для отсрачки события
     //стандартная вызывается вот так
-    var validator = new Validator();
-    console.log(validator.isEmail(email));
+    const userEmail = document.getElementById("Email").value;
+    const userDomain = document.getElementById("Domain").value;
+    const userDateOf = document.getElementById("Date").value;
+    const userPhone = document.getElementById("Phone").value;
+
+    var validator = new Validator(userEmail, userDomain, userDateOf, userPhone);
+    console.log(validator);
+    validator.isEmail();
+
     // console.log(validator.isDomain(domen));
     // console.log(validator.isDate(date));
     // console.log(validator.isPhone(phone));
@@ -77,3 +88,7 @@ buttonStatic.addEventListener("click", () => { //вынесенно в функ�
     console.log(ValidatorStatic.isDate('12.05.2021'));
     console.log(ValidatorStatic.isPhone('+7(910)123-45-67')); //тут используем формат своей страны
 })
+
+
+// класс — это шаблон, описывающий свойства и методы, которыми будет обладать любой объект, созданный на основе этого класса.
+// Когда мы создаем объект на основе существующего класса, обязательно надо использовать слово new и имя класса.
