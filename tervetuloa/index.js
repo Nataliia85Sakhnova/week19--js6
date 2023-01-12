@@ -21,7 +21,7 @@ function deleteWelcomeMessages(propsArr) { //`propsArr` — массив клю�
     //     код, который выполнится для всех элементов
     // })
     propsArr.forEach(function (item) {
-        delete(item);
+        delete welcomeMessages[item];
     });
 
 }

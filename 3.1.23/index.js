@@ -6,9 +6,11 @@ const phonebook = {
     },
     'Вася брат Андрея': {
         mobile: '+79045174415'
+    },
+    'Анастасия Павловна': {
+        work: '+79569172374'
     }
 };
-
 
 // const cat = {
 //     breed: 'сиамская',
@@ -19,7 +21,18 @@ const phonebook = {
 // console.log(cat);
 
 function addPhoneNumber(name, numberType, number) {
-    phonebook[`${name}`] = {};
+    // if (name in phonebook) {
+    //     phonebook[`${name}`][`${numberType}`] = number;
+    // } else {
+    //     phonebook[`${name}`] = {};
+    //     phonebook[`${name}`][`${numberType}`] = number;
+    // }
+
+    console.log(!(name in phonebook));
+
+    if (!(name in phonebook)) {
+        phonebook[`${name}`] = {};
+    }
     phonebook[`${name}`][`${numberType}`] = number;
 
     // напишите ваш код здесь
@@ -29,6 +42,8 @@ function addPhoneNumber(name, numberType, number) {
 addPhoneNumber('Анастасия Павловна', 'mobile', '+79111545616');
 
 console.log(phonebook['Анастасия Павловна'].mobile); // "+79111545616"
+
+console.log(phonebook);
 
 
 //   Напишите функцию `addPhoneNumber(name, numberType, number)`,
