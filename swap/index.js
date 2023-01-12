@@ -5,9 +5,12 @@
 function swap(obj) {
     const res = {};
 
-    for (let key in obj) {
-        let key = obj[value];
-        res[key] = value;
+    for (let key in obj) { //тут наверное доложен быль форыч
+        obj[`${key}`] = res[`${value}`];
+        obj[`${value}`] = res[`${key}`];
+
+        // let key = obj[value];
+        // res[key] = value;
     }
 
     // добавьте в res ключи и значения obj, поменяв их местами
