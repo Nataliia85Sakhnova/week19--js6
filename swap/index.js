@@ -7,10 +7,14 @@ function swap(obj) {
 
     for (let key in obj) {
         res[key] = obj[key];
-        // res[value] = key; // значение ключа объекта res = key; ??????????????? 
-        console.log(res[key]); //😃
-        console.log(key); //smile
-        console.log(obj[key]); //😃
+        // const value = obj[key];
+        res[obj[key]] = key;
+        // res[value] = key; // значение ключа объекта res = key; ???????????????
+        // console.log(res[value]); //smile
+        // console.log(res[key]); //😃
+        // console.log(key); //smile
+        // console.log(obj[key]); //😃
+        console.log(res)
     };
 }
 
