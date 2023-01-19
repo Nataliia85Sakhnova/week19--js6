@@ -6,16 +6,9 @@ function swap(obj) {
     const res = {};
 
     for (let key in obj) {
-        res[key] = obj[key];
-        // const value = obj[key];
         res[obj[key]] = key;
-        // res[value] = key; // значение ключа объекта res = key; ???????????????
-        // console.log(res[value]); //smile
-        // console.log(res[key]); //😃
-        // console.log(key); //smile
-        // console.log(obj[key]); //😃
-        console.log(res)
     };
+    return res;
 }
 
 const myObj = {
@@ -27,4 +20,6 @@ const myObj = {
     dizziness: '😵'
 };
 
-swap(myObj);
+result = swap(myObj);
+console.log(result);
+document.createElement('div').innerHTML = result;
