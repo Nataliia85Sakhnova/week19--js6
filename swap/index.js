@@ -20,6 +20,5 @@ const myObj = {
     dizziness: '😵'
 };
 
-result = swap(myObj);
-console.log(result);
-document.createElement('div').innerHTML = result;
+console.log(swap(myObj));
+document.getElementById("button").addEventListener("click", document.createElement('div').innerHTML = swap(myObj));
