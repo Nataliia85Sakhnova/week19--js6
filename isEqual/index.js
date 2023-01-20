@@ -21,8 +21,9 @@ function isEqual(firstObj, secondObj) {
     console.log(arr1);
     console.log(arr2);
 
-    arr1 === arr2;
-    return;
+    const result = arr1 === arr2;
+    console.log(result);
+    return result;
 
 
     // const areArrSame = (a, b) => {
