@@ -8,23 +8,20 @@
 // return
 
 function isEqual(firstObj, secondObj) {
-    // const arrKeys1 = Object.keys(firstObj); //массив ключей 1
-    // const arrValues1 = //массив значений 1
-    //     const arrKeys2 = Object.keys(secondObj); //массив ключей 2
-    // const arrValues1 = //массив значений 2
 
-    //     let match = true;
-
-    const arr1 = Object.entries(firstObj);
-    const arr2 = Object.entries(secondObj);
+    const arr1 = Object.entries(firstObj); //получаем целиковый 1й массив
+    const arr2 = Object.entries(secondObj); //получаем целиковый 2й массив
 
     console.log(arr1);
     console.log(arr2);
 
-    const result = arr1 === arr2;
+    const result = JSON.stringify(arr1) === JSON.stringify(arr2);
     console.log(result);
     return result;
 
+    // Object.keys
+    // every
+    // ===
 
     // const areArrSame = (a, b) => {
     //     a.every((n, i) => {
@@ -33,8 +30,6 @@ function isEqual(firstObj, secondObj) {
     //         return (n === b[i]);
     //     });
     // }
-    // console.log(areArrSame(arr1, arr2));
-    // return;
     // const areAllBallsAreGreen = balls.every((ball, index, arr) => ball === '🎾')// true
 }
 
@@ -53,5 +48,5 @@ const third = {
     anotherProperty: 'one more value'
 };
 
-isEqual(first, second); // true
-isEqual(second, third); // false
+console.log(isEqual(first, second)); // true
+console.log(isEqual(second, third)); // false
