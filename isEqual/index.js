@@ -16,6 +16,7 @@ function isEqual(firstObj, secondObj) {
     console.log(arr2);
 
     const result = JSON.stringify(arr1) === JSON.stringify(arr2);
+    // const result = _.isEqual(arr1, arr2); // или так
     console.log(result);
     return result;
 
