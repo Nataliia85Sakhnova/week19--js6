@@ -8,6 +8,7 @@ function copy(obj) {
     // const mergedObject = {
     //     ...obj
     // };
+    console.log(newObj);
     // console.log(mergedObject);
     // return
 }
@@ -20,10 +21,6 @@ const firstObj = {
 
 const secondObj = firstObj;
 const thirdObj = copy(firstObj);
-
-// console.log(firstObj); // { one: 1, two: 2, three: 3 }
-// console.log(secondObj); // { one: 1, two: 2, three: 3 }
-console.log(thirdObj); // { one: 1, two: 2, three: 3 }
 
 firstObj.four = 4;
 
